@@ -3,6 +3,8 @@ package listasSimples;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import org.w3c.dom.Node;
+
 public class DoubleLinkedList<T> implements ListADT<T> {
 
 	// Atributuak
@@ -25,26 +27,57 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 	}
 
 	public T removeFirst() {
-	// listako lehen elementua kendu da
-	// Aurrebaldintza: 
-		// KODEA OSATU ETA KOSTUA KALKULATU
+		NODE<T> elem = first;
+		if(first.next == null) {
+			first = null;
+		}
+		else {
+			first.prev.next = first.next;
+			first.next.prev = first.prev;
+			first = first.next;
+		}
+		count--;
+		return elem.data;
 	}
 
 	public T removeLast() {
-	// listako azken elementua kendu da
-	// Aurrebaldintza: 
-		// KODEA OSATU ETA KOSTUA KALKULATU
+		NODE<T> elem = first.prev;
+		if(first.next ==first) {
+			first = null;
+		}
+		else{
+			elem.prev.next = first;
+			first.prev = elem.prev;
+		}
+		count--;
+		return elem.data;
     }
 
 
 	public T remove(T elem) {
-	// Aurrebaldintza: 
-	// Balio hori listan baldin badago, bere lehen agerpena ezabatuko dut. Kendutako objektuaren erreferentzia 
-        //  bueltatuko du (null ez baldin badago)
-
+		if(!contains(elem)) {
+			return null;
+		}
+		else {
+			NODE<T> unekoa = first;
+			boolean aurkitua = false;
+			while(!aurkitua){
 	
-		// KODEA OSATU ETA KOSTUA KALKULATU
-        };
+				if(unekoa.data.equals(elem)) {
+					aurkitua = true;
+					if(unekoa.equals(first)){return removeFirst();}
+					else if(unekoa.next.equals(first)){return removeLast();}
+					else{
+						unekoa.prev.next = unekoa.next;
+						unekoa.next.prev = unekoa.prev;
+						count--;
+						return unekoa.data;
+					}
+				}
+				unekoa=unekoa.next;
+			}
+		}	
+	}
 
 	public T first() {
 	// listako lehen elementua ematen du
@@ -62,12 +95,25 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 
 	public boolean contains(T elem) {
 	// Egiazkoa bueltatuko du aurkituz gero, eta false bestela
-		      if (isEmpty())
+		      if (isEmpty()){
 		          return false;
-
-		      		// KODEA OSATU ETA KOSTUA KALKULATU
+			  }
+			  else{
+				Node<T> unekoa = first;
+				boolean aurkitua = false;
+				if(first.data.equals(elem)) {
+					aurkitua = true;
+					return aurkitua;
+			  }
+			  while(!aurkitua){
+				  if(unekoa.data.equals(elem)) {
+					  aurkitua = true;
+				  }
+				  unekoa = unekoa.next;
+			  }
+		      return aurkitua;		// KODEA OSATU ETA KOSTUA KALKULATU
 		   }
-
+		}
 	public T find(T elem) {
 	// Elementua bueltatuko du aurkituz gero, eta null bestela
 
