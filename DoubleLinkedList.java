@@ -116,7 +116,12 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 		}
 	public T find(T elem) {
 	// Elementua bueltatuko du aurkituz gero, eta null bestela
-
+		if (contains(elem)) {
+			return elem;
+		}
+		else {
+			return null;
+		}
 		// KODEA OSATU ETA KOSTUA KALKULATU
 	}
 
