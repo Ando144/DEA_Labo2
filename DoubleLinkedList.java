@@ -122,7 +122,7 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 		else {
 			return null;
 		}
-		// KODEA OSATU ETA KOSTUA KALKULATU
+	// KODEA OSATU ETA KOSTUA KALKULATU
 	}
 
 	public boolean isEmpty() 
@@ -136,6 +136,22 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 
 	   // an iterator, doesn't implement remove() since it's optional 
 	   private class ListIterator implements Iterator<T> { 
+		Node<T> aux = first;
+		boolean listaGuztiaIgarota=false; 
+
+		public boolean hasNext(){
+			if(isEmpty()){ return false; }
+			else if (aux.equals(first) && listaGuztiaIgarota) {return false;}
+			 else {
+				 listaGuztiaIgarota=true;
+				 return true;
+			 }
+		 }
+		 
+		 public T next(){
+			 T emaitza = aux.data;
+			 aux=aux.next;
+			 return emaitza;} 
 
 		// KODEA OSATU 
 	   } // private class
