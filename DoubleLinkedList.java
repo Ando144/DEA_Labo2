@@ -11,6 +11,7 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 	protected Node<T> first;  // azkenengoaren erreferentzia
 	protected String deskr;  // deskribapena
 	protected int count;
+	
 
 	public DoubleLinkedList() {
 		first = null;
@@ -42,7 +43,7 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 
 	public T removeLast() {
 		NODE<T> elem = first.prev;
-		if(first.next ==first) {
+		if(first.next == first) {
 			first = null;
 		}
 		else{
@@ -136,21 +137,20 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 
 	   // an iterator, doesn't implement remove() since it's optional 
 	   private class ListIterator implements Iterator<T> { 
-		Node<T> aux = first;
-		boolean listaGuztiaIgarota=false; 
+		Node<T> puntero = first;
+		boolean flag=false; 
 
 		public boolean hasNext(){
 			if(isEmpty()){ return false; }
-			else if (aux.equals(first) && listaGuztiaIgarota) {return false;}
+			else if (putero.equals(first) && flag) {return false;}
 			 else {
-				 listaGuztiaIgarota=true;
+				 flag=true;
 				 return true;
 			 }
 		 }
-		 
 		 public T next(){
-			 T emaitza = aux.data;
-			 aux=aux.next;
+			 T emaitza = puntero.data;
+			 puntero=puntero.next;
 			 return emaitza;} 
 
 		// KODEA OSATU 

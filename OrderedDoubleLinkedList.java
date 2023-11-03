@@ -4,7 +4,7 @@ public class OrderedDoubleLinkedList<T> extends DoubleLinkedList<T> implements O
 	
 	public void add(T elem){
 		// KODEA OSATU ETA KOSTUA KALKULATU
-
+		
 
 
 	}
