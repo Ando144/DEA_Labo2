@@ -37,6 +37,9 @@ public class UnorderedDoubleLinkedList<T> extends DoubleLinkedList<T> implements
 		Node <T> unekoa;
 		if (isEmpty()) {
 			System.out.println("Lista hutsa da");
+			first=berria;
+			berria.next=berria;
+			berria.prev=berria;
 		}
 		else {
 			if (!contains(target))
