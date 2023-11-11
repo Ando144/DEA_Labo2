@@ -1,14 +1,12 @@
-package listasSimples;
+package DEA_Labo2;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import org.w3c.dom.Node;
-
 public class DoubleLinkedList<T> implements ListADT<T> {
 
 	// Atributuak
-	protected Node<T> first;  // azkenengoaren erreferentzia
+	Node<T> first;  // azkenengoaren erreferentzia
 	protected String deskr;  // deskribapena
 	protected int count;
 	
@@ -28,7 +26,7 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 	}
 
 	public T removeFirst() {
-		NODE<T> elem = first;
+		Node<T> elem = first;
 		if(first.next == null) {
 			first = null;
 		}
@@ -42,7 +40,7 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 	}
 
 	public T removeLast() {
-		NODE<T> elem = first.prev;
+		Node<T> elem = first.prev;
 		if(first.next == first) {
 			first = null;
 		}
@@ -55,12 +53,12 @@ public class DoubleLinkedList<T> implements ListADT<T> {
     }
 
 
-	public T remove(T elem) {
+	public integer remove(T elem) {
 		if(!contains(elem)) {
 			return null;
 		}
 		else {
-			NODE<T> unekoa = first;
+			Node<T> unekoa = first;
 			boolean aurkitua = false;
 			while(!aurkitua){
 	

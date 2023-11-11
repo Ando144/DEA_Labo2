@@ -1,3 +1,4 @@
+package DEA_Labo2;
 public class Aktorea {
 private String izenAbizena;
 private ListaPelikula pelikulak;

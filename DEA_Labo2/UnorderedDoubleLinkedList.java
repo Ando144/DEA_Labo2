@@ -1,4 +1,4 @@
-package listasSimples;
+package DEA_Labo2;
 
 public class UnorderedDoubleLinkedList<T> extends DoubleLinkedList<T> implements UnorderedListADT<T> {
 	
@@ -35,6 +35,7 @@ public class UnorderedDoubleLinkedList<T> extends DoubleLinkedList<T> implements
 		Node <T> berria = new Node<T>(elem);
 		Node <T> aux;
 		Node <T> unekoa;
+
 		if (isEmpty()) {
 			System.out.println("Lista hutsa da");
 			first=berria;

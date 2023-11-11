@@ -1,8 +1,9 @@
+package DEA_Labo2;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import listasSimples.UnorderedDoubleLinkedList;
+import DEA_Labo2.UnorderedDoubleLinkedList;
 
 public class ListaAktore {
     private UnorderedDoubleLinkedList<Aktorea> lista;

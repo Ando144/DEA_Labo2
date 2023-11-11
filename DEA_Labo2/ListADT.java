@@ -1,4 +1,4 @@
-package listasSimples;
+package DEA_Labo2;
 
 import java.util.Iterator;
 

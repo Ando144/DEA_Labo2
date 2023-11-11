@@ -1,4 +1,4 @@
-package listasSimples;
+package DEA_Labo2;
 
 public class PruebaOrderedDoubleLinkedList {	
 		

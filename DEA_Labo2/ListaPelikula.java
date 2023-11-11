@@ -1,7 +1,9 @@
+package DEA_Labo2;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import listasSimples.UnorderedDoubleLinkedList;
+import DEA_Labo2.UnorderedDoubleLinkedList;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -14,7 +16,7 @@ public class ListaPelikula {
 
 	this.lista= new UnorderedDoubleLinkedList<Pelikula>();
     }
-    private getIteradorea()
+    private Iterator<Pelikula> getIteradorea()
     {
         return this.lista.iterator();
     }
@@ -28,7 +30,7 @@ public class ListaPelikula {
     public void ezabatuPelikula(Pelikula pPelikula){
         this.lista.remove(pPelikula);
     }
-    public void ezabatuAktorea(Aktore pAktore)
+    public void ezabatuAktorea(Aktorea pAktore)
     {
         Iterator<Pelikula> itr = this.getIteradorea();
         while(itr.hasNext()){
