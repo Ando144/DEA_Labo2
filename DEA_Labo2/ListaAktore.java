@@ -17,12 +17,7 @@ public class ListaAktore {
         return this.lista.iterator();
     
     }
-    public static ListaAktore getListaAktore(){
-        if (nireListaAktoreKonkretuak==null){
-            nireListaAktoreKonkretuak = new ListaAktore();
-        }
-        return nireListaAktoreKonkretuak;
-    }
+
     public int getLuzera()
     {
         return this.lista.size();
@@ -49,6 +44,10 @@ public class ListaAktore {
 			}
 		}
 		return badago;
+    }
+    public boolean AktoreaBadago(Aktorea pAktorea)
+    {
+        return this.lista.contains(pAktorea);
     }
     public void reseat()
     {

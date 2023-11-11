@@ -36,7 +36,7 @@ public class ListaPelikula {
         while(itr.hasNext()){
             Pelikula pelikula = itr.next();
             if(pelikula.badagoAktorea(pAktore)){
-                pelikula.ezabatuAktorea(pAktore);
+                pelikula.aktoreaEzabatu(pAktore);
             }
         }
     }
@@ -69,14 +69,17 @@ public class ListaPelikula {
         }
     }
 
+    /*
     //metodo para pasar las pelikulas a un txt con su nombre y año de estreno
-   /*  public void pasatuTxtraPelikulak(String txt) throws IOException {
+     public void pasatuTxtraPelikulak(String txt) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(txt))) {
             for (Pelikula pelikula : lista) {
                 writer.write(pelikula.getIzenBurua());
-                writer.newLine();
+                writer.newLine();            
             }
         }
     }*/
+  
 } 
+
 

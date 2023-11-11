@@ -53,7 +53,7 @@ public class DoubleLinkedList<T> implements ListADT<T> {
     }
 
 
-	public integer remove(T elem) {
+	public T remove(T elem) {
 		if(!contains(elem)) {
 			return null;
 		}
@@ -75,7 +75,9 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 				}
 				unekoa=unekoa.next;
 			}
+
 		}	
+		return null;
 	}
 
 	public T first() {
@@ -140,7 +142,7 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 
 		public boolean hasNext(){
 			if(isEmpty()){ return false; }
-			else if (putero.equals(first) && flag) {return false;}
+			else if (puntero.equals(first) && flag) {return false;}
 			 else {
 				 flag=true;
 				 return true;

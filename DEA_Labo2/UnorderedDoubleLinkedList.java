@@ -7,7 +7,10 @@ public class UnorderedDoubleLinkedList<T> extends DoubleLinkedList<T> implements
 		// KODEA OSATU ETA KOSTUA KALKULATU
 		Node <T> berria = new Node<T>(elem);
 		Node <T> last;
-
+		if(this.first==null)
+		{
+			first=berria;
+		}
 		last = first.prev;
 		berria.next = first;
 		berria.prev = last;
@@ -19,14 +22,21 @@ public class UnorderedDoubleLinkedList<T> extends DoubleLinkedList<T> implements
 	public void addToRear(T elem) {
 	// bukaeran gehitu
 		// KODEA OSATU ETA KOSTUA KALKULATU
-		Node <T> berria = new Node<T>(elem);
-		Node <T> last;
-		last=first.prev;
-		berria.next = first;
-		berria.prev = last;
-		first.prev = berria;
-		last.next = berria;
+			Node <T> berria = new Node<T>(elem);
+			Node <T> last;
+		if(this.first==null)
+		{
+			first=berria;
+		}
+		else
+		{
 
+			last=first.prev;
+			berria.next = first;
+			berria.prev = last;
+			first.prev = berria;
+			last.next = berria;
+		}
 		
 	}
 	
@@ -34,7 +44,7 @@ public class UnorderedDoubleLinkedList<T> extends DoubleLinkedList<T> implements
 		// KODEA OSATU ETA KOSTUA KALKULATU (AUKERAZKOA)
 		Node <T> berria = new Node<T>(elem);
 		Node <T> aux;
-		Node <T> unekoa;
+		Node <T> unekoa=first;
 
 		if (isEmpty()) {
 			System.out.println("Lista hutsa da");
@@ -48,7 +58,14 @@ public class UnorderedDoubleLinkedList<T> extends DoubleLinkedList<T> implements
 				System.out.println("Ez dago elementu hori listan");
 			}
 			else {
-				unekoa = find(target);
+				boolean aurk = false;
+				while(!aurk){
+					if(unekoa.data.equals(target)){
+						aurk = true;
+					}else{
+						unekoa = unekoa.next;
+					}
+				}
 				aux = unekoa.next;
 				unekoa.next=berria;
 				aux.prev=berria;

@@ -16,13 +16,18 @@ public class Pelikula
         this.casting.gehituAktorea(pAktorea);
     }
     
-    
+    public void aktoreaEzabatu(Aktorea pAktorea){
+        this.casting.ezabatuAktorea(pAktorea);
+    }
     public String getIzenBurua(){
         return this.IzenBurua;
     }
 
     public int getEstrenaldia(){
         return this.Estreinaldia;
+    }
+    public boolean badagoAktorea(Aktorea pAktorea){
+        return this.casting.AktoreaBadago(pAktorea);
     }
 
     public ListaAktore getCasting(){

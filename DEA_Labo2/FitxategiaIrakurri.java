@@ -9,7 +9,7 @@ public class FitxategiaIrakurri {
     int urtea = 1970;
     // Especifica la ruta del archivo que deseas cargar
     while (urtea < 2023){
-        String rutaArchivo = "C:\\Users\\andon\\Desktop\\Universidad\\DEA\\DEA_Labo2\\actors_and_films_" + urtea + ".txt";
+        String rutaArchivo = "C:\\Users\\andon\\Desktop\\Universidad\\DEA\\DEA_Labo2\\DEA_Labo2\\Pelikulak\\actors_and_films_" + urtea + ".txt";
 
         try {
             // Crea un objeto Scanner para leer el archivo
