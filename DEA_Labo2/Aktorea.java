@@ -2,9 +2,6 @@ package DEA_Labo2;
 public class Aktorea {
 private String izenAbizena;
 private ListaPelikula pelikulak;
-
-
-
     public Aktorea(String pIzenAbizena) {
         this.izenAbizena=pIzenAbizena;
         this.pelikulak = new ListaPelikula();
